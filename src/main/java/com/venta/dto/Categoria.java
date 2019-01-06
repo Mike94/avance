@@ -2,26 +2,37 @@ package com.venta.dto;
 
 import java.io.Serializable;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+/*
+ *  6 y 7 agregar entity y table
+ * */
 
 @Entity
 @Table(name="categoria")
 public class Categoria implements Serializable{
-	
+	/**
+	 1. declarar atributos
+	 2. agregar los getter y setters 
+	 3. Agregar constructor con fields con todos los atributos
+	 4. Agregar constructor con fields con el atributo id
+	 5. Agregar constructor con fields con ningun atributo	 
+	 */
 	private static final long serialVersionUID = 1L;
-	
 	@Id
 	private int id;
 	private String denominacion;
-		
+	
+	
 	
 	public Categoria(int id, String denominacion) {
 		super();
 		this.id = id;
 		this.denominacion = denominacion;
 	}
-		
+	
 	public Categoria(int id) {
 		super();
 		this.id = id;
@@ -30,7 +41,6 @@ public class Categoria implements Serializable{
 	public Categoria() {
 		super();
 	}
-
 
 	public int getId() {
 		return id;
@@ -66,5 +76,8 @@ public class Categoria implements Serializable{
 			return false;
 		return true;
 	}
+	
+	
+	
 	
 }
